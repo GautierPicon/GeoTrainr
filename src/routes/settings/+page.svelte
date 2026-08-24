@@ -83,7 +83,11 @@
         <span class="text-sm font-medium">
           {$i18n.t('settings.timer.enable')}
         </span>
-        <Toggle id="timer-enabled" bind:checked={timerSettings.enabled} />
+        <Toggle
+          id="timer-enabled"
+          label={$i18n.t('settings.timer.enable')}
+          bind:checked={timerSettings.enabled}
+        />
       </label>
       <div
         class="flex items-center justify-between gap-4 transition-opacity

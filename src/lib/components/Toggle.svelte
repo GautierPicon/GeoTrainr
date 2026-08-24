@@ -5,6 +5,7 @@
     checked = $bindable(false),
     disabled = false,
     id = undefined,
+    label,
     class: className = '',
   } = $props();
 </script>
@@ -14,6 +15,7 @@
   type="button"
   role="switch"
   aria-checked={checked}
+  aria-label={label}
   {disabled}
   onclick={() => !disabled && (checked = !checked)}
   class={cn(
