@@ -29,13 +29,15 @@
 </svelte:head>
 
 <div class="mx-auto w-full max-w-2xl px-4 py-12">
-  <h1 class="mb-8 text-3xl font-bold tracking-tight">
+  <h1 class="font-display mb-8 text-4xl font-bold tracking-tight">
     {$i18n.t('settings.title')}
   </h1>
 
   <Card.Root>
     <Card.Header>
-      <Card.Title>{$i18n.t('settings.theme.title')}</Card.Title>
+      <Card.Title class="font-display"
+        >{$i18n.t('settings.theme.title')}</Card.Title
+      >
     </Card.Header>
     <Card.Content>
       <div class="grid grid-cols-3 gap-3">
@@ -43,9 +45,9 @@
           <button
             type="button"
             onclick={() => (theme.current = t.value)}
-            class="flex flex-col items-center gap-2 rounded-lg border p-4 transition-colors
+            class="flex flex-col items-center gap-2 rounded-lg border p-4 transition-all
 							{theme.current === t.value
-              ? 'border-primary bg-primary/5 ring-ring/40 ring-2'
+              ? 'border-primary ring-primary/30 ring-2'
               : 'hover:bg-accent'}"
           >
             <t.icon class="size-5" />
@@ -58,7 +60,9 @@
     <Separator />
 
     <Card.Header>
-      <Card.Title>{$i18n.t('settings.language.title')}</Card.Title>
+      <Card.Title class="font-display"
+        >{$i18n.t('settings.language.title')}</Card.Title
+      >
     </Card.Header>
     <Card.Content>
       <LanguageSwitcher />
@@ -67,7 +71,9 @@
     <Separator />
 
     <Card.Header>
-      <Card.Title>{$i18n.t('settings.timer.title')}</Card.Title>
+      <Card.Title class="font-display"
+        >{$i18n.t('settings.timer.title')}</Card.Title
+      >
     </Card.Header>
     <Card.Content class="flex flex-col gap-4">
       <label
