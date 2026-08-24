@@ -167,7 +167,7 @@
     if (!showFeedback)
       return 'h-14 text-base justify-start px-6 hover:bg-accent';
     if (option.code === question.correct.code)
-      return 'h-14 text-base justify-start px-6 bg-emerald-500 text-white hover:bg-emerald-500 dark:bg-emerald-600 dark:text-white';
+      return 'h-14 text-base justify-start px-6 bg-success text-success-foreground hover:bg-success';
     if (option.code === selected.code)
       return 'h-14 text-base justify-start px-6 bg-destructive text-white hover:bg-destructive dark:bg-destructive dark:text-white';
     return 'h-14 text-base justify-start px-6 opacity-50 hover:bg-accent';
@@ -201,7 +201,7 @@
       bind:this={flagEl}
       src="https://flagcdn.com/{question.correct.code}.svg"
       alt={question.correct.name}
-      class="mb-8 h-auto max-h-64 w-auto rounded-lg object-contain shadow-xl lg:max-h-72"
+      class="mb-8 h-auto max-h-64 w-auto rounded-lg border object-contain shadow-[6px_6px_0_0_var(--border)] lg:max-h-72"
     />
 
     <div class="grid w-full max-w-md grid-cols-1 gap-3">

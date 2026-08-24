@@ -152,7 +152,7 @@
   function answerClass(option) {
     if (!showFeedback) return 'h-14 text-base justify-start px-6';
     if (option.code === question.correct.code)
-      return 'h-14 text-base justify-start px-6 bg-emerald-500 text-white hover:bg-emerald-500 dark:bg-emerald-600 dark:text-white';
+      return 'h-14 text-base justify-start px-6 bg-success text-success-foreground hover:bg-success';
     if (option.code === selected.code)
       return 'h-14 text-base justify-start px-6 bg-destructive text-white hover:bg-destructive dark:bg-destructive dark:text-white';
     return 'h-14 text-base justify-start px-6 opacity-50';
@@ -184,9 +184,12 @@
 
     <div
       bind:this={sentenceEl}
-      class="border-border/60 bg-card max-w-xl rounded-2xl border p-10 text-center shadow-xl"
+      class="border-border bg-card max-w-xl rounded-lg border p-10 text-center shadow-[6px_6px_0_0_var(--border)]"
     >
-      <p class="text-2xl leading-relaxed font-medium sm:text-3xl" dir="auto">
+      <p
+        class="font-display text-2xl leading-relaxed font-medium sm:text-3xl"
+        dir="auto"
+      >
         {question.sentence}
       </p>
     </div>
