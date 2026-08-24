@@ -1,9 +1,6 @@
-node_modules
-*.log
-dist
+.svelte-kit
 build
-coverage
-.vite
-*.lock
-.DS_Store
-.git
+node_modules
+.vercel
+bun.lock
+package-lock.json
