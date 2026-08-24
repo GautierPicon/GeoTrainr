@@ -46,30 +46,36 @@
   />
 </svelte:head>
 
-<div class="from-primary/5 via-background to-background bg-linear-to-b">
+<div>
   <section
-    class="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-20 pb-14 text-center"
+    class="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-24 pb-20 text-center"
   >
-    <div bind:this={hero} class="flex flex-col items-center gap-6">
-      <img src={logo} alt="GeoTrainr logo" class="size-24 drop-shadow-lg" />
-      <h1 class="max-w-2xl text-4xl font-extrabold tracking-tight sm:text-5xl">
+    <div bind:this={hero} class="flex flex-col items-center gap-7">
+      <img src={logo} alt="GeoTrainr logo" class="size-24" />
+      <h1
+        class="font-display max-w-2xl text-5xl leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl"
+      >
         {$i18n.t('homepage.title')}
         <span class="text-primary">{$i18n.t('homepage.titleHighlight')}</span>
       </h1>
-      <p class="text-muted-foreground max-w-xl text-lg">
+      <p class="text-muted-foreground max-w-xl text-lg leading-relaxed">
         {$i18n.t('homepage.description')}
       </p>
     </div>
   </section>
 
   <section
-    class="mx-auto grid w-full max-w-4xl gap-6 px-4 pb-16 sm:grid-cols-2"
+    class="mx-auto grid w-full max-w-4xl gap-6 px-4 pb-24 sm:grid-cols-2"
   >
     <div bind:this={cards[0]}>
-      <Card.Root class="h-full transition-shadow hover:shadow-lg">
+      <Card.Root
+        class="h-full border transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--foreground)]"
+      >
         <Card.Header>
-          <Badge variant="secondary" class="w-fit">🇫🇷</Badge>
-          <Card.Title>{$i18n.t('homepage.flags.title')}</Card.Title>
+          <Badge variant="outline" class="text-base">🇫🇷</Badge>
+          <Card.Title class="font-display text-xl"
+            >{$i18n.t('homepage.flags.title')}</Card.Title
+          >
           <Card.Description
             >{$i18n.t('homepage.flags.description')}</Card.Description
           >
@@ -82,10 +88,14 @@
       </Card.Root>
     </div>
     <div bind:this={cards[1]}>
-      <Card.Root class="h-full transition-shadow hover:shadow-lg">
+      <Card.Root
+        class="h-full border transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--foreground)]"
+      >
         <Card.Header>
-          <Badge variant="secondary" class="w-fit">文字</Badge>
-          <Card.Title>{$i18n.t('homepage.scripts.title')}</Card.Title>
+          <Badge variant="outline" class="text-base">文字</Badge>
+          <Card.Title class="font-display text-xl"
+            >{$i18n.t('homepage.scripts.title')}</Card.Title
+          >
           <Card.Description
             >{$i18n.t('homepage.scripts.description')}</Card.Description
           >
@@ -99,25 +109,29 @@
     </div>
   </section>
 
-  <section class="mx-auto w-full max-w-5xl px-4 pb-24">
-    <h2 class="mb-8 text-center text-2xl font-bold tracking-tight">
+  <section class="mx-auto w-full max-w-5xl px-4 pb-28">
+    <p
+      class="text-muted-foreground mb-10 text-center text-xs font-semibold tracking-[0.2em] uppercase"
+    >
       {$i18n.t('homepage.howItWorks.title')}
-    </h2>
-    <div class="grid gap-6 sm:grid-cols-3">
+    </p>
+    <div class="grid gap-10 sm:grid-cols-3">
       {#each stepsData as step, index (step.key)}
         <div
           bind:this={steps[index]}
           class="flex flex-col items-center gap-3 text-center"
         >
-          <div
-            class="bg-secondary flex size-12 items-center justify-center rounded-full text-xl"
+          <span
+            class="font-display text-primary/30 text-4xl font-bold tabular-nums"
           >
-            {step.icon}
-          </div>
+            0{index + 1}
+          </span>
           <p class="font-semibold">
             {$i18n.t(`homepage.howItWorks.steps.${step.key}.title`)}
           </p>
-          <p class="text-muted-foreground text-sm">
+          <p
+            class="text-muted-foreground max-w-[16rem] text-sm leading-relaxed"
+          >
             {$i18n.t(`homepage.howItWorks.steps.${step.key}.desc`)}
           </p>
         </div>
