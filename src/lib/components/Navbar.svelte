@@ -2,7 +2,6 @@
   import { page } from '$app/state';
   import { i18n } from '$lib/i18n';
   import logo from '$lib/assets/logo.svg';
-  import { Button } from '$lib/components/ui/button';
 
   const links = [
     { href: '/', key: 'navbar.home' },
@@ -13,30 +12,38 @@
 </script>
 
 <header
-  class="border-border/60 bg-background/80 sticky top-0 z-50 border-b backdrop-blur-md"
+  class="border-border bg-background/90 sticky top-0 z-50 border-b backdrop-blur-md"
 >
   <div
-    class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4"
+    class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4"
   >
     <a
       href="/"
       class="flex items-center gap-2.5 transition-opacity hover:opacity-80"
     >
-      <img src={logo} alt="GeoTrainr" class="size-9" />
-      <span class="hidden text-lg font-bold tracking-tight sm:block"
+      <img src={logo} alt="GeoTrainr" class="size-8" />
+      <span
+        class="font-display hidden text-base font-bold tracking-tight sm:block"
         >GeoTrainr</span
       >
     </a>
 
-    <nav class="flex items-center gap-1">
+    <nav class="flex items-center gap-6">
       {#each links as link (link.href)}
-        <Button
-          variant={page.url.pathname === link.href ? 'secondary' : 'ghost'}
-          size="sm"
+        <a
           href={link.href}
+          class="relative py-1 text-sm font-medium tracking-wide transition-colors
+						{page.url.pathname === link.href
+            ? 'text-primary'
+            : 'text-muted-foreground hover:text-foreground'}"
         >
           {$i18n.t(link.key)}
-        </Button>
+          {#if page.url.pathname === link.href}
+            <span
+              class="bg-primary absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full"
+            ></span>
+          {/if}
+        </a>
       {/each}
     </nav>
   </div>

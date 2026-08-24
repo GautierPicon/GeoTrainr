@@ -60,6 +60,7 @@
       stroke-dashoffset={(1 - progress) * CIRCUMFERENCE}
     />
   </svg>
-  <span class="text-lg font-semibold tabular-nums">{seconds}s</span>
+  <span class="font-display text-lg font-semibold tabular-nums">{seconds}s</span
+  >
   <span class="sr-only">{$i18n.t('quiz.timeLeft')}</span>
 </div>
