@@ -164,13 +164,12 @@
   });
 
   function answerClass(option) {
-    if (!showFeedback)
-      return 'h-14 text-base justify-start px-6 hover:bg-accent';
+    if (!showFeedback) return 'h-14 w-full justify-center px-6 text-base';
     if (option.code === question.correct.code)
-      return 'h-14 text-base justify-start px-6 bg-success text-success-foreground hover:bg-success';
+      return 'h-14 w-full justify-center px-6 text-base bg-success text-success-foreground';
     if (option.code === selected.code)
-      return 'h-14 text-base justify-start px-6 bg-destructive text-white hover:bg-destructive dark:bg-destructive dark:text-white';
-    return 'h-14 text-base justify-start px-6 opacity-50 hover:bg-accent';
+      return 'h-14 w-full justify-center px-6 text-base bg-destructive text-white dark:bg-destructive dark:text-white';
+    return 'h-14 w-full justify-center px-6 text-base opacity-50';
   }
 </script>
 
