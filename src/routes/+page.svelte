@@ -122,7 +122,7 @@
           class="flex flex-col items-center gap-3 text-center"
         >
           <span
-            class="font-display text-primary/30 text-4xl font-bold tabular-nums"
+            class="font-display text-primary/70 text-5xl font-bold tabular-nums"
           >
             0{index + 1}
           </span>
