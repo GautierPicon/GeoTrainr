@@ -39,7 +39,7 @@
 </script>
 
 <svelte:head>
-  <title>GeoTrainr — {$i18n.t('homepage.titleHighlight')}</title>
+  <title>GeoTrainr</title>
   <meta
     name="description"
     content="GeoTrainr — entraînez-vous à reconnaître drapeaux et systèmes d'écriture."

@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-  <title>GeoTrainr — {$i18n.t('settings.title')}</title>
+  <title>GeoTrainr - {$i18n.t('settings.title')}</title>
 </svelte:head>
 
 <div class="mx-auto w-full max-w-2xl px-4 py-12">

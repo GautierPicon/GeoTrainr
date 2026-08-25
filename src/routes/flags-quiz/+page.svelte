@@ -174,6 +174,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>GeoTrainr - {$i18n.t('navbar.flags')}</title>
+</svelte:head>
+
 <div
   class="flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center p-4"
 >
